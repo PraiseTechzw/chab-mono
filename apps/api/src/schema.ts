@@ -18,6 +18,7 @@ const typeDefs = /* GraphQL */ `
   type Query {
     nodes(query: String, tag: String): [KnowledgeNode!]!
     node(id: ID!): KnowledgeNode
+    answer(question: String!): String!
   }
 
   input CreateKnowledgeNodeInput {
@@ -46,6 +47,10 @@ const resolvers = {
       const mongoUri = process.env.MONGO_URI || "mongodb://localhost:27017";
       await connectToDatabase(mongoUri);
       return KnowledgeNodeModel.findOne({ id }).lean();
+    },
+    answer: async (_: unknown, { question }: { question: string }) => {
+      const { answerQuestion } = await import("./routes/answer.js");
+      return answerQuestion(question);
     },
   },
   Mutation: {
