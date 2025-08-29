@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@9",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "pnpm -r --parallel dev",
-    "build": "pnpm -r build",
-    "start": "pnpm --filter @chab/web start",
-    "lint": "pnpm -r lint"
+    "dev": "pnpm -r --parallel --filter ./apps/* run dev",
+    "build": "pnpm -r --filter ./apps/* run build",
+    "start": "pnpm -r --filter ./apps/* run start",
+    "lint": "pnpm -r run lint"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
+    "eslint-config-next": "15.5.2",
     "turbo": "^2",
     "typescript": "^5"
   }

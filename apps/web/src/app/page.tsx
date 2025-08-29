@@ -1,9 +1,9 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">CHAB</h1>
-      <p className="mt-2 text-sm">The Collective Human-AI Brain</p>
-    </div>
+    <main style={{ padding: 24 }}>
+      <h1>CHAB – The Collective Human-AI Brain</h1>
+      <p>Welcome. Contribute knowledge and ask questions.</p>
+    </main>
   );
 }
 

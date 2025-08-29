@@ -1,0 +1,12 @@
+{
+  "name": "@chab/core-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  }
+}
+
