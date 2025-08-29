@@ -1,0 +1,30 @@
+{
+  "name": "@chab/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3",
+    "cors": "^2",
+    "dotenv": "^16",
+    "express": "^4",
+    "graphql": "^16",
+    "mongoose": "^8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2",
+    "@types/express": "^4",
+    "@types/node": "^20",
+    "eslint": "^9",
+    "ts-node-dev": "^2",
+    "typescript": "^5"
+  }
+}
+
